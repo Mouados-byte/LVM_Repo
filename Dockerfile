@@ -8,10 +8,3 @@ RUN apt-get update && apt-get install -y \
     parted \
     util-linux \
     && apt-get clean
-
-RUN mkdir -p /scripts
-COPY create_loop_devices.sh /scripts/create_loop_devices.sh
-RUN chmod +x /scripts/create_loop_devices.sh
-
-# Run the script on container start
-CMD ["/scripts/create_loop_devices.sh"]
